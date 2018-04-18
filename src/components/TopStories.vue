@@ -1,15 +1,5 @@
 <template>
   <div id="top-stories">
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-      <ul>
-        <li>
-          <router-link to="/">Home</router-link>
-        </li>
-        <li>
-          <router-link to="/top" aria-current="page">Top Stories</router-link>
-        </li>
-      </ul>
-    </nav>
 
     <TitleHeading title="Top Stories" subtitle="Curated articles from the NYT staff."></TitleHeading>
 
@@ -63,7 +53,6 @@ export default {
   methods: {
     loadArticles () {
       this.loading = true;
-      console.log("mounted");
       axios.get('https://vue-york-times-api.herokuapp.com/top')
       .then((response) => {
         this.articles = response.data;

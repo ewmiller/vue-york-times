@@ -1,15 +1,5 @@
 <template>
   <div id="most-popular">
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-      <ul>
-        <li>
-          <router-link to="/">Home</router-link>
-        </li>
-        <li>
-          <router-link to="/popular" aria-current="page">Most Popular</router-link>
-        </li>
-      </ul>
-    </nav>
     
     <TitleHeading title="Most Popular" subtitle="Today's most-shared stories."></TitleHeading>
 

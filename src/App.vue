@@ -22,7 +22,6 @@ export default {
 .breadcrumb {
   /* padding: 2em; */
   padding-left: 2.75em;
-  margin-top: 2em;
   text-decoration: none;
   color: inherit;
 }
