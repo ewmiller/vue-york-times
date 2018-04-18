@@ -23,6 +23,11 @@ export default new Router({
       path: '/top',
       name: 'TopStories',
       component: TopStories
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: SearchPage
     }
   ]
 })

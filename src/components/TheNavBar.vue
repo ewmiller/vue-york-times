@@ -18,6 +18,9 @@
                 <li v-if="isSection('/popular')">
                   <router-link to="/popular" aria-current="page">Most Popular</router-link>
                 </li>
+                <li v-if="isSection('/search')">
+                  <router-link to="/search" aria-current="page">Search</router-link>
+                </li>
               </ul>
             </div>
           </div>
