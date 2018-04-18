@@ -53,7 +53,7 @@ export default {
     loadArticles () {
       this.loading = true;
       console.log("mounted");
-      axios.get('http://localhost:3000/popular')
+      axios.get('https://vue-york-times-api.herokuapp.com/popular')
       .then((response) => {
         console.log(response);
         this.articles = response.data;
