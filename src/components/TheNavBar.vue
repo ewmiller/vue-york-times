@@ -1,16 +1,16 @@
 <template>
   <div id="the-nav-bar">
     <nav class="navbar" role="navigation" aria-label="main-navigation">
-      <div class="navbar-brand">
-        <span class="navbar-item"><strong>VYT</strong></span>
-      </div>
+      <a target="_blank" href="http://developer.nytimes.com/" class="navbar-brand">
+        <img id="nyt" class="navbar-item" src="../assets/nytimes.png" alt="">
+      </a>
       <div class="navbar-menu">
         <div class="navbar-start">
           <div class="navbar-item">
             <div class="breadcrumb" aria-label="breadcrumbs">
               <ul>
                 <li>
-                  <router-link to="/">Home</router-link>
+                  <router-link to="/">VYT Home</router-link>
                 </li>
                 <li v-if="isSection('/top')">
                   <router-link to="/top" aria-current="page">Top Stories</router-link>
@@ -23,22 +23,46 @@
           </div>
         </div>
         <div class="navbar-end">
-          <a class="navbar-item" href="#">About</a>
+          <a class="navbar-item" v-on:click="toggleModal">About</a>
           <a class="navbar-item" href="mailto:ethan@ewmiller.me">Contact</a>
           <a class="navbar-item" target="_blank" href="https://github.com/ewmiller/vue-york-times">View on Github</a>
         </div>
       </div>
     </nav>
+    <div v-if="modalActive" class="modal is-active">
+      <div v-on:click="toggleModal" class="modal-background"></div>
+      <div class="modal-content">
+        <div class="box has-text-centered">
+            <h5 class="title is-5">About the Site</h5>
+            <p class="subtitle is-6">
+              Vue York Times is a strictly non-commercial, open-source project.
+              All article content and data is provided by The New York Times.
+            </p>
+              <img src="http://static01.nytimes.com/packages/images/developer/logos/poweredby_nytimes_200c.png" alt="">
+
+        </div>
+      </div>
+      <button v-on:click="toggleModal" class="modal-close is-large" aria-label="close"></button>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
     name: 'TheNavBar',
+    data () {
+      return {
+        modalActive: false
+      }
+    },
     methods: {
       isSection (section) {
         const path = this.$route.path;
         return (path === section);
+      },
+      toggleModal () {
+        console.log("toggle modal")
+        this.modalActive = !this.modalActive;
       }
     }
   }
@@ -46,11 +70,15 @@
 
 <style scoped>
 .navbar-brand {
-  padding-left: 2em;
+  margin-left: 2em;
 }
 .breadcrumbs {
   padding: 0 !important;
   margin: 0 !important;
   vertical-align: center;
+}
+
+#nyt {
+  padding: 0.75em;
 }
 </style>
