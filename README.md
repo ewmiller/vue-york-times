@@ -7,6 +7,18 @@ Vue York Times is a site built around the New York Times Developers API: http://
 This site requests data from a back-end Node API I wrote, which serves as a proxy between this site and NYT itself (for safe storage of API keys).
 The back-end proxy then relays information from NYT back to this Vue app, which renders each article's information as a clickable card component. 
 
+## Roadmap
+
+Current work: 
+
+- Continue building out Most Popular page. Look into creating Article Modal component to display summary of article when clicked on (then with link to the real thing).
+- Deploy back end API to Heroku or similar service.
+
+Next Up:
+
+- Build out Top Stories page
+- Build out Search page
+
 ## Build Setup
 
 ``` bash
