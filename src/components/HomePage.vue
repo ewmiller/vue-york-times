@@ -14,7 +14,7 @@
                   <div class="media-content">
                     <div class="content has-text-centered">
                       <h3 class="title is-5">Most Popular</h3>
-                      <p class="subtitle is-6">The most viewed and shared stories.</p>
+                      <p class="subtitle is-6">The stories people are talking about.</p>
                     </div>
                   </div>
                 </article>
@@ -27,7 +27,7 @@
                     <div class="media-content">
                       <div class="content has-text-centered">
                         <h3 class="title is-5">Top Stories</h3>
-                        <p class="subtitle is-6">Hand-picked stories from the editors.</p>
+                        <p class="subtitle is-6">Hand-picked articles from the editors.</p>
                       </div>
                     </div>
                   </article>

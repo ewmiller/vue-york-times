@@ -12,6 +12,7 @@ The back-end proxy then relays information from NYT back to this Vue app, which 
 Current work: 
 
 - Look into creating Article Modal component to display summary of article when clicked on (then with link to the real thing).
+- Format dates correctly
 
 Next Up:
 
