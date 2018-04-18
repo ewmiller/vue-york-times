@@ -3,8 +3,11 @@
     <a class="box" v-bind:href="article['url']">
       <article class="media">
         <div class="media-left">
-          <figure class="image">
+          <figure v-if="isPopular" class="image">
             <img v-bind:src="article['media'][0]['media-metadata'][0]['url']" alt="image">
+          </figure>
+          <figure v-if="source === 'top'" class="image">
+            <img v-bind:src="article['multimedia'][0]['url']" alt="image">
           </figure>
         </div>
         <div class="media-content">
@@ -23,7 +26,12 @@
 <script>
   export default {
     name: 'ArticleCard',
-    props: ['article']
+    props: ['article', 'source'],
+    computed: {
+      isPopular () {
+        return (this.source === 'popular');
+      }
+    }
   }
 </script>
 

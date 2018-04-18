@@ -20,3 +20,9 @@
     name: 'TheNavBar'
   }
 </script>
+
+<style scoped>
+.navbar-brand {
+  padding-left: 2em;
+}
+</style>
