@@ -15,6 +15,9 @@
                     <div class="content has-text-centered">
                       <h3 class="title is-5">Most Popular</h3>
                       <p class="subtitle is-6">The stories people are talking about.</p>
+                      <div class="icon">
+                        <i class="fas fa-users"></i>
+                      </div>
                     </div>
                   </div>
                 </article>
@@ -28,6 +31,9 @@
                       <div class="content has-text-centered">
                         <h3 class="title is-5">Top Stories</h3>
                         <p class="subtitle is-6">Hand-picked articles from the editors.</p>
+                        <div class="icon">
+                          <i class="fas fa-newspaper"></i>
+                        </div>
                       </div>
                     </div>
                   </article>
@@ -40,6 +46,9 @@
                       <div class="content has-text-centered">
                         <h3 class="title is-5">Search</h3>
                         <p class="subtitle is-6">Search articles by keyword.</p>
+                        <div class="icon">
+                          <i class="fas fa-search"></i>
+                        </div>
                       </div>
                     </div>
                   </article>
@@ -62,5 +71,8 @@ export default {
 </script>
 
 <style scoped>
-
+.icon {
+  padding-top: 0.5em;
+  font-size: 2em;
+}
 </style>
