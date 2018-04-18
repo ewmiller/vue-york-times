@@ -1,6 +1,11 @@
 # vue-york-times
 
-> A Vue.js project
+> A minimalist approach to the news. Powered by Vue.js.
+
+Vue York Times is a site built around the New York Times Developers API: http://developer.nytimes.com/
+
+This site requests data from a back-end Node API I wrote, which serves as a proxy between this site and NYT itself (for safe storage of API keys).
+The back-end proxy then relays information from NYT back to this Vue app, which renders each article's information as a clickable card component. 
 
 ## Build Setup
 
