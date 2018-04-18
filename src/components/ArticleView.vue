@@ -38,27 +38,35 @@ const axios = require('axios');
 const chunk = require('chunk');
 
 export default {
-  name: 'MostPopular',
+  name: 'ArticleView',
   components: {
     ArticleCard
   },
   computed: {
     chunkedArticles: function() {
-      return chunk(this.articles.results, 3);
+      return chunk(this.articles, 3);
     }
   },
   methods: {
     loadArticles () {
       this.loading = true;
-      const url = 'https://vue-york-times-api.herokuapp.com/' + this.section;
+      var url = 'http://localhost:3000' + this.section;
+      if(this.section === '/search'){
+        url = url + '/' + this.searchTerms;
+      }
       axios.get(url)
       .then((response) => {
-        console.log("Recieved response from NYT.");
-        this.articles = response.data;
+        console.log("Recieved response from API.");
+        if(this.section === '/popular' || this.section === '/top'){
+          this.articles = response.data.results;
+        } else {
+          this.articles = response.data.response.docs;
+        }
         this.loading = false;
       })
       .catch((error) => {
-        console.log("Error retrieving data from NYT.");
+        console.log("Error retrieving data from API.");
+        console.log(error);
         this.error = true;
         this.loading = false;
       });
@@ -71,7 +79,7 @@ export default {
       error: false
     }
   },
-  props: ['section'],
+  props: ['section', 'searchTerms'],
   mounted () {
     this.loadArticles();
   }
