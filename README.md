@@ -11,13 +11,10 @@ The back-end proxy then relays information from NYT back to this Vue app, which 
 
 Current work: 
 
-- Continue building out Most Popular page. Look into creating Article Modal component to display summary of article when clicked on (then with link to the real thing).
-- Deploy back end API to Heroku or similar service.
-- Implement improved navigation features (big back arrow in top left corner, or link to home, also make nav links work)
+- Look into creating Article Modal component to display summary of article when clicked on (then with link to the real thing).
 
 Next Up:
 
-- Build out Top Stories page
 - Build out Search page
 
 ## Build Setup

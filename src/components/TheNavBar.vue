@@ -24,8 +24,8 @@
         </div>
         <div class="navbar-end">
           <a class="navbar-item" href="#">About</a>
-          <a class="navbar-item" href="#">Contact</a>
-          <a class="navbar-item" href="#">View on Github</a>
+          <a class="navbar-item" href="mailto:ethan@ewmiller.me">Contact</a>
+          <a class="navbar-item" target="_blank" href="https://github.com/ewmiller/vue-york-times">View on Github</a>
         </div>
       </div>
     </nav>
