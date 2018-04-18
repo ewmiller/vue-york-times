@@ -1,17 +1,8 @@
 <template>
   <div id="home-page">
-    <div class="section">
-      <div class="container">
-        <section class="hero">
-          <div class="hero-body">
-            <div class="container has-text-centered">
-              <h1 class="title">The Vue York Times</h1>
-              <h2 class="subtitle">A minimalist approach to the news. Powered by Vue.js.</h2>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
+
+    <TitleHeading title="The Vue York Times" subtitle="A minimalist approach to the news. Powered by Vue.js."></TitleHeading>
+    
     <div id="categories">
       <div class="section">
         <div class="container">
@@ -62,7 +53,12 @@
 </template>
 
 <script>
+import TitleHeading from './TitleHeading.vue';
 
+export default {
+  name: 'HomePage',
+  components: {TitleHeading}
+}
 </script>
 
 <style scoped>
