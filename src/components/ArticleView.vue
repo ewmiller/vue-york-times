@@ -50,7 +50,7 @@ export default {
   methods: {
     loadArticles () {
       this.loading = true;
-      var url = 'http://localhost:3000' + this.section;
+      var url = 'https://vue-york-times-api.herokuapp.com' + this.section;
       if(this.section === '/search'){
         url = url + '/' + this.searchTerms;
       }
