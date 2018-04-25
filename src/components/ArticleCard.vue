@@ -32,7 +32,10 @@
               <p class="title is-5">{{article.title}}</p>
               <hr>
               <p class="subtitle is-6">{{article.abstract}}</p>
-              <p class="date">{{article.byline}}. {{formatDate(article.published_date)}}</p>
+              <p class="byline">
+                <span v-if="article.byline !== undefined">{{article.byline}}.</span> 
+                <span v-if="article.published_date !== undefined">{{formatDate(article.published_date)}}.</span>
+              </p>
             </div>
           </div>
         </div>
@@ -83,14 +86,14 @@ export default {
       return src;
     },
     formatDate(date) {
-      return dateformat(date, "fullDate");
+      return dateformat(date, "mmmm dd, yyyy");
     }
   }
 }
 </script>
 
 <style scoped>
-.date {
+.byline {
   color: rgb(134, 134, 134);
 }
 </style>
