@@ -18,15 +18,17 @@
         </div>
       </div>
     </div>
-    <div class="section" v-if="articles">
-      <div class="container">
-        <div class="columns" v-for="(articles, chunkIndex) in chunkedArticles" v-bind:key="chunkIndex">
-          <div class="column" v-for="(article, articleIndex) in articles" v-bind:key="articleIndex">
-            <ArticleCard v-bind:source="section" v-bind:article="article"></ArticleCard>
+    <transition name="fade">
+      <div class="section" v-if="articles">
+        <div class="container">
+          <div class="columns" v-for="(articles, chunkIndex) in chunkedArticles" v-bind:key="chunkIndex">
+            <div class="column" v-for="(article, articleIndex) in articles" v-bind:key="articleIndex">
+              <ArticleCard v-bind:source="section" v-bind:article="article"></ArticleCard>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -84,3 +86,12 @@ export default {
   }
 }
 </script>
+
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>

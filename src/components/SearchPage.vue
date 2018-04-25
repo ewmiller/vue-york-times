@@ -8,17 +8,19 @@
           <div class="columns">
             <div class="column"></div>
             <div class="column has-text-centered">
-              <div class="field">
-                <label class="label">Enter Search Terms</label>
-                <div class="control has-icons-right">
-                  <span class="icon is-right">
-                    <i class="fas fa-search"></i>
-                  </span>
-                  <input v-model="searchTerms" type="text" class="input" placeholder="e.g. NBA playoffs">
+              <form @submit.prevent="search">
+                <div class="field">
+                  <label class="label">Enter Search Terms</label>
+                  <div class="control has-icons-right">
+                    <span class="icon is-right">
+                      <i class="fas fa-search"></i>
+                    </span>
+                    <input v-model="searchTerms" type="text" class="input" placeholder="e.g. NBA playoffs">
+                  </div>
+                  <br>
+                  <button class="button is-info">Search</button>
                 </div>
-                <br>
-                <button v-on:click="search" class="button is-info">Search</button>
-              </div>
+              </form>
             </div>
             <div class="column"></div>
           </div>
