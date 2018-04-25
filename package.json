@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "chunk": "^0.0.2",
+    "dateformat": "^3.0.3",
     "express": "^4.16.3",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"

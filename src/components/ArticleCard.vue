@@ -24,7 +24,7 @@
                   {{article.byline.original}}.
                 </span>
                 <span v-if="article.pub_date !== undefined">
-                  {{article.pub_date}}
+                  {{formatDate(article.pub_date)}}
                 </span>
               </p>
             </div>
@@ -32,7 +32,7 @@
               <p class="title is-5">{{article.title}}</p>
               <hr>
               <p class="subtitle is-6">{{article.abstract}}</p>
-              <p class="date">{{article.byline}}. {{article.published_date}}</p>
+              <p class="date">{{article.byline}}. {{formatDate(article.published_date)}}</p>
             </div>
           </div>
         </div>
@@ -42,46 +42,51 @@
 </template>
 
 <script>
-  const img = require('../assets/nytimeslogo.png');
 
-  export default {
-    name: 'ArticleCard',
-    props: ['article', 'source'],
-    computed: {
-      isPopular () {
-        return (this.source === '/popular');
+const img = require('../assets/nytimeslogo.png');
+const dateformat = require('dateformat');
+
+export default {
+  name: 'ArticleCard',
+  props: ['article', 'source'],
+  computed: {
+    isPopular () {
+      return (this.source === '/popular');
+    }
+  },
+  methods: {
+    getSearchArticleImage (article) {
+      let src;
+      try {
+        src = 'https://nyt.com/' + article['multimedia'][2]['url'];
+      } catch (err) {
+        src = img;
       }
+      return src;
     },
-    methods: {
-      getSearchArticleImage (article) {
-        let src;
-        try {
-          src = 'https://nyt.com/' + article['multimedia'][2]['url'];
-        } catch (err) {
-          src = img;
-        }
-        return src;
-      },
-      getTopArticleImage (article) {
-        let src;
-        try {
-          src = article['multimedia'][0]['url'];
-        } catch (err) {
-          src = img;
-        }
-        return src;
-      },
-      getPopularArticleImage (article) {
-        let src;
-        try {
-          src = article['media'][0]['media-metadata'][0]['url'];
-        } catch (err) {
-          src = img;
-        }
-        return src;
+    getTopArticleImage (article) {
+      let src;
+      try {
+        src = article['multimedia'][0]['url'];
+      } catch (err) {
+        src = img;
       }
+      return src;
+    },
+    getPopularArticleImage (article) {
+      let src;
+      try {
+        src = article['media'][0]['media-metadata'][0]['url'];
+      } catch (err) {
+        src = img;
+      }
+      return src;
+    },
+    formatDate(date) {
+      return dateformat(date, "fullDate");
     }
   }
+}
 </script>
 
 <style scoped>
