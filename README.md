@@ -4,7 +4,7 @@
 
 Vue York Times is a site built around the New York Times Developers API: http://developer.nytimes.com/
 
-This site requests data from a back-end Node API I wrote, which serves as a proxy between this site and NYT itself (for safe storage of API keys).
+This site requests data from a back-end Node API I wrote, which serves as a proxy between this site and NYT itself (for safe storage of API keys, formatting of data, and other useful features).
 The back-end proxy then relays information from NYT back to this Vue app, which renders each article's information as a clickable card component. 
 
 ## Roadmap
