@@ -51,7 +51,7 @@ export default {
   methods: {
     loadArticles () {
       this.loading = true;
-      var url = 'https://vue-york-times-api.herokuapp.com' + this.section;
+      var url = process.env.BASE_ENDPOINT + this.section;
       if(this.section === '/search'){
         url = url + '/' + this.searchTerms;
       }
