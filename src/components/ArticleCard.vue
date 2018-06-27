@@ -1,6 +1,6 @@
 <template>
   <div class="article-card">
-    <a target="_blank" class="box" v-bind:href="articleUrl">
+    <a target="_blank" class="box" v-on:click="launchSummary">
       <article class="media">
         <div class="media-left">
           <figure v-if="source === '/popular'" class="image">
@@ -41,17 +41,41 @@
         </div>
       </article>
     </a>
+    <div class="modal is-active" v-if="modalOpen">
+      <div class="modal-background" v-on:click="modalOpen = !modalOpen"></div>
+      <div class="modal-content">
+        <div class="box">
+          <p class="title is-5 modal-title" v-if="source === '/search'">{{article.headline.main}}</p>
+          <p class="title is-5 modal-title" v-else>{{article.title}}</p>
+          <p class="subtitle is-6">{{articleByLine}}</p>
+          <p class="subtitle is-6"><a v-bind:href="articleUrl" target="_blank">View full article</a></p>
+          <hr>
+          <p>{{summary}}</p>
+          <br>
+          <p><span class="disclaimer">Article summary provided by SMMRY.</span></p>
+          <br>
+        </div>
+      </div>
+      <button class="modal-close is-large" v-on:click="modalOpen = !modalOpen" aria-label="close"></button>
+    </div>
   </div>
 </template>
 
 <script>
+const axios = require('axios')
 
-const img = require('../assets/nytimeslogo.png');
-const dateformat = require('dateformat');
+const img = require('../assets/nytimeslogo.png')
+const dateformat = require('dateformat')
 
 export default {
   name: 'ArticleCard',
   props: ['article', 'source'],
+  data () {
+    return {
+      summary: "",
+      modalOpen: false
+    }
+  },
   computed: {
     isPopular () {
       return (this.source === '/popular');
@@ -61,6 +85,13 @@ export default {
         return this.article["web_url"]
       } else {
         return this.article["url"]
+      }
+    },
+    articleByLine () {
+      if (this.source === '/search'){
+        return this.article.byline.original
+      } else {
+        return this.article.byline
       }
     }
   },
@@ -94,6 +125,19 @@ export default {
     },
     formatDate(date) {
       return dateformat(date, "mmmm dd, yyyy");
+    },
+    launchSummary () {
+      const url = process.env.BASE_ENDPOINT + "/summary?article=" + this.articleUrl
+      console.log("Getting summary: " + url)
+      axios.get(url).then((response) => {
+        console.log(response)
+        if (response.status == 200){
+          this.summary = response.data
+          this.modalOpen = true
+        } else {
+          this.summary = "Error retrieving summary from SMMRY. For now, feel free to read the full article, but let me know if the issue persists! github.com/ewmiller"
+        }
+      })
     }
   }
 }
@@ -102,5 +146,12 @@ export default {
 <style scoped>
 .byline {
   color: rgb(134, 134, 134);
+}
+
+.disclaimer {
+  font-style: italic;
+  color: rgb(134, 134, 134);
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 </style>
