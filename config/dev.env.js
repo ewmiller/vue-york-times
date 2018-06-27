@@ -5,6 +5,5 @@ const prodEnv = require('./prod.env')
 require('dotenv').config()
 
 module.exports = merge(prodEnv, {
-  NODE_ENV: '"development"',
-  BASE_ENDPOINT: JSON.stringify(process.env.BASE_ENDPOINT)
+  NODE_ENV: '"development"'
 })
