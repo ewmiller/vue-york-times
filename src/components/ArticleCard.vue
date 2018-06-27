@@ -1,6 +1,6 @@
 <template>
   <div class="article-card">
-    <a class="box" v-bind:href="article['url']">
+    <a target="_blank" class="box" v-bind:href="articleUrl">
       <article class="media">
         <div class="media-left">
           <figure v-if="source === '/popular'" class="image">
@@ -55,6 +55,13 @@ export default {
   computed: {
     isPopular () {
       return (this.source === '/popular');
+    },
+    articleUrl () {
+      if (this.source === '/search'){
+        return this.article["web_url"]
+      } else {
+        return this.article["url"]
+      }
     }
   },
   methods: {
