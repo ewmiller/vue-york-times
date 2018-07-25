@@ -1,9 +1,15 @@
-@import '~bulma/bulma';
-
 $lightgrey: rgb(134, 134, 134);
 $smallpad: 0.75em;
 $smallerpad: 0.5em;
 $largepad: 2em;
+
+$button-background-color: #00b386;
+$button-color: #ffffff;
+$button-hover-color: #ffffff;
+$button-hover-border-color: darkgrey;
+
+@import '~bulma/bulma';
+
 
 #app {
   -webkit-font-smoothing: antialiased;

@@ -18,7 +18,7 @@
                     <input v-model="searchTerms" type="text" class="input" placeholder="e.g. Boston Red Sox">
                   </div>
                   <br>
-                  <button class="button is-info">Search</button>
+                  <button class="button">Search</button>
                 </div>
               </form>
             </div>
