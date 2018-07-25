@@ -68,7 +68,7 @@ const img = require('../assets/nytimeslogo.png')
 const dateformat = require('dateformat')
 
 export default {
-  name: 'ArticleCard',
+  name: 'article-card',
   props: ['article', 'source'],
   data () {
     return {

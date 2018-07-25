@@ -23,7 +23,7 @@
         <div class="container">
           <div class="columns" v-for="(articles, chunkIndex) in chunkedArticles" v-bind:key="chunkIndex">
             <div class="column" v-for="(article, articleIndex) in articles" v-bind:key="articleIndex">
-              <ArticleCard v-bind:source="section" v-bind:article="article"></ArticleCard>
+              <article-card v-bind:source="section" v-bind:article="article"></article-card>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@ const chunk = require('chunk');
 export default {
   name: 'ArticleView',
   components: {
-    ArticleCard
+    'article-card': ArticleCard
   },
   computed: {
     chunkedArticles: function() {
