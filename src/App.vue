@@ -12,17 +12,3 @@ export default {
   components: {TheNavBar}
 }
 </script>
-
-<style>
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.breadcrumb {
-  /* padding: 2em; */
-  padding-left: 2.75em;
-  text-decoration: none;
-  color: inherit;
-}
-</style>

@@ -75,18 +75,3 @@
     }
   }
 </script>
-
-<style scoped>
-.navbar-brand {
-  margin-left: 2em;
-}
-.breadcrumbs {
-  padding: 0 !important;
-  margin: 0 !important;
-  vertical-align: center;
-}
-
-#nyt {
-  padding: 0.75em;
-}
-</style>
