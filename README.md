@@ -9,13 +9,7 @@ The back-end proxy then relays information from NYT back to this Vue app, which 
 
 ## Roadmap
 
-Current work: 
-
-- Build out Search page
-- Look into creating Article Modal component to display summary of article when clicked on (then with link to the real thing).
-- Format dates correctly
-
-Next Up:
+Future ideas:
 
 - Subject selections (art, sports, etc)
 - Choose day, week, or month category
@@ -37,3 +31,8 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Other Dev Notes
+
+- NYT API token may need to be reauthorized every few months
+- SMMRY API token has limited uses, so be sure to periodically check on it as well.
