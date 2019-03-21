@@ -21,24 +21,26 @@ $button-hover-border-color: darkgrey;
   font-size: $size-3;
 }
 
-.breadcrumb {
-  /* padding: 2em; */
-  padding-left: 2.75em;
-  text-decoration: none;
-  color: inherit;
-}
-
-.navbar-brand {
-  margin-left: $largepad;
-}
-.breadcrumbs {
-  padding: 0;
-  margin: 0;
-  vertical-align: center;
-}
-
-#nyt {
-  padding: $smallpad;
+nav {
+  .breadcrumb {
+    /* padding: 2em; */
+    padding-left: 2.75em;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .navbar-brand {
+    margin-left: $largepad;
+  }
+  .breadcrumbs {
+    padding: 0;
+    margin: 0;
+    vertical-align: center;
+  }
+  
+  #nyt {
+    padding: $smallpad;
+  }
 }
 
 .byline {
